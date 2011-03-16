@@ -27,7 +27,7 @@ sd(scores$score) - sqrt(shape * scale ^ 2)
 
 comparison <- rbind(data.frame(Score = scores$score,
                                Source = 'Empirical'),
-                    data.frame(Score = rgamma(10000, shape, rate),
+                    data.frame(Score = rgamma(500000, shape, rate),
                                Source = 'Gamma'))
 
 pdf(file.path('graphs', 'density_comparison.pdf'))

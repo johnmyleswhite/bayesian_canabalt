@@ -5,6 +5,6 @@ model
 		score[i] ~ dgamma(shape, rate)
 	}
 	
-	shape ~ dgamma(1, 0.0001)
-	rate ~ dgamma(1, 0.0001)
+	shape ~ dgamma(0.0001, 0.0001)
+	rate ~ dgamma(0.0001, 0.0001)
 }
