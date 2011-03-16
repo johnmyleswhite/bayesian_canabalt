@@ -1,0 +1,19 @@
+model
+{
+  for (i in 1:N)
+  {
+    score[i] ~ dgamma(shape[device[i]], rate[device[i]])
+  }
+	
+	for (j in 1:J)
+	{
+		shape[j] ~ dgamma(alpha.shape, beta.shape)
+		rate[j] ~ dgamma(alpha.rate, beta.rate)
+	}
+	
+	alpha.shape ~ dgamma(1, 0.0001)
+	beta.shape ~ dgamma(1, 0.0001)
+	
+	alpha.rate ~ dgamma(1, 0.0001)
+	beta.rate ~ dgamma(1, 0.0001)
+}

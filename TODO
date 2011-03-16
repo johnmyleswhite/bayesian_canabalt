@@ -1,0 +1,2 @@
+* Perform a sensitivity analysis by altering the various gamma priors.
+* Try to fit a heavy tailed distribution over the natural numbers.

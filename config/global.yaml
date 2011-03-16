@@ -1,0 +1,10 @@
+data_loading: 'on'
+munging: 'on'
+logging: 'off'
+load_libraries: 'on'
+libraries:
+  - 'reshape'
+  - 'plyr'
+  - 'ggplot2'
+  - 'stringr'
+  - 'rjags'
