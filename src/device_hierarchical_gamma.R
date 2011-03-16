@@ -13,7 +13,7 @@ jags <- jags.model(file.path('jags', 'device_hierarchical_gamma.bug'),
  
 mcmc.samples <- coda.samples(jags,
                              c('shape', 'rate'),
-                             5000)
+                             10000)
 
 # Estimate the model parameters using our samples.
 credible.intervals <- data.frame()

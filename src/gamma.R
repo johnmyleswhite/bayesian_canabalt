@@ -10,7 +10,7 @@ jags <- jags.model(file.path('jags', 'gamma.bug'),
  
 mcmc.samples <- coda.samples(jags,
                              c('shape', 'rate'),
-                             5000)
+                             10000)
 
 # Estimate the model parameters using our samples.
 parameters <- apply(as.array(mcmc.samples), 2, mean)

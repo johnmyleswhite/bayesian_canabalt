@@ -11,7 +11,7 @@ jags <- jags.model(file.path('jags', 'multinomial.bug'),
  
 mcmc.samples <- coda.samples(jags,
                              c('p'),
-                             5000)
+                             10000)
 
 # Estimate the model parameters using our samples.
 credible.intervals <- data.frame()
