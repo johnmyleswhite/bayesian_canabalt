@@ -62,7 +62,7 @@ for (i in 1:K)
 }
 
 # Visualize the parameters and implied summary statistics.
-pdf(file.path('graphs', 'death_hierarchical_gamma_1.pdf'))
+png(file.path('graphs', 'death_hierarchical_gamma_1.png'))
 p <- ggplot(subset(credible.intervals, Parameter %in% c('Mean', 'Standard Deviation')),
             aes(x = reorder(Type, Median),
                 y = Median,
@@ -78,7 +78,7 @@ p <- ggplot(subset(credible.intervals, Parameter %in% c('Mean', 'Standard Deviat
 print(p)
 dev.off()
 
-pdf(file.path('graphs', 'death_hierarchical_gamma_2.pdf'))
+png(file.path('graphs', 'death_hierarchical_gamma_2.png'))
 p <- ggplot(subset(credible.intervals, Parameter %in% c('Shape', 'Scale')),
             aes(x = reorder(Type, Median),
                 y = Median,

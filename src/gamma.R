@@ -30,15 +30,21 @@ comparison <- rbind(data.frame(Score = scores$score,
                     data.frame(Score = rgamma(500000, shape, rate),
                                Source = 'Gamma'))
 
-pdf(file.path('graphs', 'density_comparison.pdf'))
-ggplot(comparison, aes(x = Score, fill = Source)) +
-  facet_grid(Source ~ .) +
-  geom_density()
-dev.off()
-
-pdf(file.path('graphs', 'tail_density_comparison.pdf'))
+png(file.path('graphs', 'density_comparison.png'))
 ggplot(comparison, aes(x = Score, fill = Source)) +
   facet_grid(Source ~ .) +
   geom_density() +
-  scale_y_sqrt()
+  xlab('Score') +
+  ylab('Estimated Density') +
+  opts(title = 'Comparison between Empirical Data and Gamma Model')
+dev.off()
+
+png(file.path('graphs', 'tail_density_comparison.png'))
+ggplot(comparison, aes(x = Score, fill = Source)) +
+  facet_grid(Source ~ .) +
+  geom_density() +
+  scale_y_sqrt() +
+  xlab('Score') +
+  ylab('Estimated Density') +
+  opts(title = 'Tail Comparison between Empirical Data and Gamma Model')
 dev.off()

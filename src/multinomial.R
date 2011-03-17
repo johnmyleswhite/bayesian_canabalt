@@ -29,7 +29,7 @@ for (i in 1:K)
 }
 
 # Visualize the parameters.
-pdf(file.path('graphs', 'death_type_probabilities.pdf'))
+png(file.path('graphs', 'death_type_probabilities.png'))
 p <- ggplot(credible.intervals, aes(x = reorder(Type, Median), y = Median)) +
   geom_point() +
   geom_pointrange(aes(ymin = LowerBound, ymax = UpperBound)) +
